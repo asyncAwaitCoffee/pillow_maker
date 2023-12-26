@@ -1,16 +1,16 @@
 <template>
     <article>
       <section>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <h1>Can't find the pillow you want?</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas voluptatum rerum, quidem facilis maiores obcaecati velit aspernatur, autem id ut ratione vel, veniam tempore illo at libero doloribus blanditiis? Nulla accusamus soluta vitae, laudantium qui fuga, omnis eius assumenda repudiandae atque corporis suscipit magnam dicta iste, iusto eveniet ipsam facere.</p>
-      </section>
-      <section>
-        <h1>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt eveniet necessitatibus ipsam. Commodi dolor sint esse similique fuga at nobis ex tempore voluptas quae atque sit impedit numquam, ullam beatae totam non dicta quas dolorem eaque. Dicta deleniti labore, inventore nostrum quis iure odit? Dolore mollitia ipsam, dolores error quam iusto autem eius excepturi et quae. Temporibus, dolor? Quibusdam voluptatibus, impedit accusamus dignissimos distinctio inventore eaque quod magnam iusto amet sint id libero, reprehenderit minus illo atque? Labore voluptatem illum iste, at natus perspiciatis earum temporibus nostrum! Accusantium temporibus beatae debitis obcaecati in. Ex, sequi! Eveniet natus temporibus quod aliquid?</p>
       </section>
       <section class="btn-group">
         <button @click="console.log(1)">Click 1</button>
         <button @click="console.log(2)">Click 2</button>
+      </section>
+      <section>
+        <h1>Did you know?</h1>
+        <p>The ancient Egyptians are believed to be among the first to use pillows. However, these early pillows were not filled with the soft materials we use today. Instead, they were often made of stone, wood, or ceramic. The purpose of these hard pillows was to provide support and keep the head elevated to promote better breathing and prevent insects from crawling into the ears, nose, and mouth while sleeping.</p>
       </section>
     </article>    
 </template>
@@ -22,7 +22,7 @@ export default {
     
 </script>
     
-<style>
+<style scoped>
   article {
     display: flex;
     flex-flow: column;
@@ -32,17 +32,18 @@ export default {
   }
 
   section {
-    height: 40%;
+    height: 20%;
     display: flex;
     flex-flow: column;
     justify-content: center;
-    background-image: linear-gradient(rgba(211, 211, 211, 0.1), rgba(128, 128, 128, 0.1));
-    border-radius: 25px;
     padding: 0 10px;
   }
 
-  section:where(:first-child, :last-child) {
-    height: 25%;
+  section:is(:first-child, :last-child) {
+    height: 35%;
+    background-image: linear-gradient(transparent, var(--color-one));
+    border: 2px solid var(--color-one);
+    border-radius: 25px;
   }
 
   h1 {
@@ -62,7 +63,27 @@ export default {
   }
 
   button {
+    outline: none;
+    color: white;
+    font-size: var(--big-font-size);
     width: 40%;
     height: 40%;
+    border: 4px solid var(--color-one);
+    border-radius: 25px;
+    background-color: var(--color-two);
+  }
+
+  button:hover {
+    animation-name: jumping;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;    
+  }
+
+  @keyframes jumping {
+    50% {
+      translate: 0 -2px;
+    }
   }
 </style>
