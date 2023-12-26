@@ -1,9 +1,9 @@
 <template>
     <nav>
       <ul>
-        <li>Home</li>
-        <li>Create</li>
-        <li>About</li>
+        <li><router-link :to="{name: 'home'}">Home</router-link></li>
+        <li><router-link :to="{name: 'create'}">Create</router-link></li>
+        <li><router-link :to="{name: 'about'}">About</router-link></li>
         <li>Sign In</li>
       </ul>
     </nav>
@@ -15,12 +15,25 @@ export default {
 </script>
 <style>
 
-    nav, ul {
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+      cursor: pointer;
+    }
+
+    .router-link-active {
+      color: var(--color-two)
+    }
+
+    nav {
       width: 100%;
       height: 5vh;
+      background-color: var(--color-one)
     }
 
     ul {
+      height: 100%;
       display: flex;
       flex-flow: row;
       list-style: none;
@@ -31,24 +44,26 @@ export default {
     }
 
     li {
-      text-align: center;
-      line-height: 5vh;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
       font-size: var(--large-font-size);
       font-family: 'Josefin Slab', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       width: 10%;
       min-width: fit-content;
-      cursor: pointer;
       position: relative;
     }
 
-    li:hover:after {
+    a:hover:after {
       width: 100%;
     }
 
-    li:after {
+    a:after {
       content: '';
       display: block;
       position: absolute;
+      bottom: 0;
       width: 0%;
       height: 1px;
       background-color: black;

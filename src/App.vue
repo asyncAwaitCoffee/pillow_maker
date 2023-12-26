@@ -1,10 +1,10 @@
 <script>
 import Navigation from './components/Navigation.vue';
-import TheInfo from './views/TheInfo.vue';
+import Home from './views/Home.vue';
 
 export default {
   components: {
-    Navigation, TheInfo
+    Navigation, Home
   }
 }
 </script>
@@ -12,15 +12,13 @@ export default {
 <template>
   <Navigation />
   <main>
-    <TheInfo />
-
-    <article>
-      <h1></h1>
-    </article>
+    <router-view></router-view>
   </main>
 </template>
 
 <style>
+
+
 
   :root {
     --large-font-size: clamp(1.5rem, calc(1.5vh + 1.5vw), 2rem);
@@ -28,6 +26,9 @@ export default {
     --mid-font-size: clamp(1rem, calc(1vh + 1vw), 1.3rem);
 
     --flex-gap: 5px;
+
+    --color-one: rgba(255, 215, 223, 0.3);
+    --color-two: rgba(255, 156, 171, 1);
   }
 
   * {
@@ -46,6 +47,15 @@ export default {
     padding: var(--flex-gap);
     gap: var(--flex-gap);
     margin-left: 3vw;
+    margin-right: 3vw;
+  }
+
+  article {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    height: 100%;
+    width: 50%;
   }
 
 
