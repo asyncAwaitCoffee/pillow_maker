@@ -1,7 +1,7 @@
 <template>
     <article>
       <section>
-        <h1>Can't find the pillow you want?</h1>
+        <h1 class="pink-header">Can't find the pillow you want?</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas voluptatum rerum, quidem facilis maiores obcaecati velit aspernatur, autem id ut ratione vel, veniam tempore illo at libero doloribus blanditiis? Nulla accusamus soluta vitae, laudantium qui fuga, omnis eius assumenda repudiandae atque corporis suscipit magnam dicta iste, iusto eveniet ipsam facere.</p>
       </section>
       <section class="btn-group">
@@ -9,7 +9,7 @@
         <button @click="console.log(2)">Click 2</button>
       </section>
       <section>
-        <h1>Did you know?</h1>
+        <h1 class="pink-header">Did you know?</h1>
         <p>The ancient Egyptians are believed to be among the first to use pillows. However, these early pillows were not filled with the soft materials we use today. Instead, they were often made of stone, wood, or ceramic. The purpose of these hard pillows was to provide support and keep the head elevated to promote better breathing and prevent insects from crawling into the ears, nose, and mouth while sleeping.</p>
       </section>
     </article>    
@@ -47,8 +47,7 @@ export default {
   }
 
   h1 {
-    font-size: var(--big-font-size);
-    padding: 5px 0;
+    width: fit-content;
   }
 
   p {
@@ -71,19 +70,11 @@ export default {
     border: 4px solid var(--color-one);
     border-radius: 25px;
     background-color: var(--color-two);
+    transition: scale 1s;
   }
 
   button:hover {
-    animation-name: jumping;
-    animation-duration: 0.5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;    
-  }
-
-  @keyframes jumping {
-    50% {
-      translate: 0 -2px;
-    }
+    scale: 1.05;
+    transition: scale 0.3s;  
   }
 </style>

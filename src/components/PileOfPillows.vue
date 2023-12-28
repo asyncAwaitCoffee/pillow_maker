@@ -4,6 +4,7 @@
         <IconPillowBlack class="pillow pillow__top" />
         <IconPillowPink class="pillow pillow__mid" />
         <IconPillow class="pillow pillow__bottom" />
+        <h1 class="pink-header">Create the Pillow you've dreamed about!</h1>
       </div>
     </article>
 </template>
@@ -20,7 +21,23 @@ export default {
 }
 </script>
     
-<style>
+<style scoped>
+
+  h1 {
+    position: absolute;
+    z-index: 3;
+    animation-name: text-appears;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+  }
+
+  @keyframes text-appears {
+    0% {
+      opacity: 0;
+    }
+  }
+
   .pillow-article {
     overflow: hidden;
     justify-content: flex-start;
@@ -33,6 +50,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
     animation-duration: 2s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
