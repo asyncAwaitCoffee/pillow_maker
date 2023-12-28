@@ -4,7 +4,7 @@
         <li><router-link :to="{name: 'home'}">Home</router-link></li>
         <li><router-link :to="{name: 'create'}">Create</router-link></li>
         <li><router-link :to="{name: 'about'}">About</router-link></li>
-        <li>Sign In</li>
+        <li><router-link :to="{name: 'sign'}">Sign In</router-link></li>
       </ul>
     </nav>
 </template>
@@ -20,6 +20,7 @@ export default {
       text-decoration: none;
       transition: color 0.2s;
       cursor: pointer;
+      height: fit-content;
     }
 
     .router-link-active {
@@ -28,8 +29,8 @@ export default {
 
     nav {
       width: 100%;
-      height: 5vh;
-      background-color: var(--color-one)
+      height: 8vh;
+      background-image: linear-gradient(var(--color-one), transparent);
     }
 
     ul {
@@ -63,7 +64,7 @@ export default {
       content: '';
       display: block;
       position: absolute;
-      bottom: 0;
+      bottom: 15%;
       width: 0%;
       height: 1px;
       background-color: black;
